@@ -1,4 +1,5 @@
 import axios from "axios"
+import Cookies from "js-cookie"
 
 const localStorageData =
   typeof window !== "undefined" ? localStorage.getItem("_jwtToken") : ""
@@ -12,8 +13,8 @@ export const setAuthToken = (token: any) => {
 }
 
 export const setFormAuthResponse = (res: Record<string, any>) => {
-  localStorage.setItem("_jwtToken", res.data.payload.access_token)
-  localStorage.setItem("_user", res.data.payload.user)
+  Cookies.set("_jwtToken", res.data.payload.access_token)
+  Cookies.set("_user", JSON.stringify(res.data.payload.user))
 }
 
 setAuthToken(localStorageData)

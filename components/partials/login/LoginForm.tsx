@@ -40,6 +40,7 @@ const LoginForm = () => {
         console.log("res", res)
         setFormAuthResponse(res)
         setSubmittingForm(false)
+        window.location.href = "/admin"
       })
       .catch((err) => {
         console.log("err", err)
