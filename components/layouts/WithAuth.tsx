@@ -7,18 +7,15 @@ type PropType = {
   children: React.ReactNode
 }
 
-const withAuth: React.FC<PropType> = ({ children }) => {
+const WithAuth: React.FC<PropType> = ({ children }) => {
   return (
-    <div>
+    <div className="admin-template">
       <Header />
-      <hr />
       <Sidebar />
-      <hr />
-      <div>{children}</div>
-      <hr />
+      <div className="content">{children}</div>
       <Footer />
     </div>
   )
 }
 
-export default withAuth
+export default WithAuth

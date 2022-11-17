@@ -1,9 +1,9 @@
 import React from "react"
-import withAuth from "../components/layouts/withAuth"
+import WithAuth from "../components/layouts/WithAuth"
 
 const Home = () => {
   return <div>Home</div>
 }
 
-Home.PageLayouts = withAuth
+Home.PageLayouts = WithAuth
 export default Home

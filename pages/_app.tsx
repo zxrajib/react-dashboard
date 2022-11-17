@@ -4,9 +4,9 @@ import { CacheProvider } from "@emotion/react"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import createCache from "@emotion/cache"
 import { blueGrey, pink, purple } from "@mui/material/colors"
-import withAuth from "../components/layouts/withAuth"
 import { SnackbarProvider } from "notistack"
 import { CssBaseline } from "@mui/material"
+import WithAuth from "../components/layouts/WithAuth"
 
 const emotionCache = createCache({ key: "css", prepend: true })
 
@@ -16,7 +16,7 @@ type ComponentWithLayoutProps = AppProps & {
   }
 }
 function MyApp({ Component, pageProps }: ComponentWithLayoutProps) {
-  const Layout = Component.PageLayouts || withAuth
+  const Layout = Component.PageLayouts || WithAuth
 
   const theme = createTheme({
     palette: {
